@@ -1,0 +1,49 @@
+﻿@page
+@model PRO_Szkolenie_Techniczne_2_v2.Pages.Samochody.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Samochod</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Samochod.Marka)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Samochod.Marka)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Samochod.Model)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Samochod.Model)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Samochod.Kolor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Samochod.Kolor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Samochod.Numer_Rejestracyjny)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Samochod.Numer_Rejestracyjny)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Samochod.Wlasciciel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Samochod.Wlasciciel)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Samochod?.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

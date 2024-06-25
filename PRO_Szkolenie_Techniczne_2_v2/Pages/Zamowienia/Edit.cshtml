@@ -1,0 +1,60 @@
+﻿@page
+@model PRO_Szkolenie_Techniczne_2_v2.Pages.Zamowienia.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Zamowienie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Zamowienie.ID" />
+            <div class="form-group">
+                <label asp-for="Zamowienie.Nazwa" class="control-label"></label>
+                <input asp-for="Zamowienie.Nazwa" class="form-control" />
+                <span asp-validation-for="Zamowienie.Nazwa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zamowienie.Komentarz" class="control-label"></label>
+                <input asp-for="Zamowienie.Komentarz" class="form-control" />
+                <span asp-validation-for="Zamowienie.Komentarz" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zamowienie.Data_Zlozenia_Zamowienia" class="control-label"></label>
+                <input asp-for="Zamowienie.Data_Zlozenia_Zamowienia" class="form-control" />
+                <span asp-validation-for="Zamowienie.Data_Zlozenia_Zamowienia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zamowienie.Data_Odebrania_Zamowienia" class="control-label"></label>
+                <input asp-for="Zamowienie.Data_Odebrania_Zamowienia" class="form-control" />
+                <span asp-validation-for="Zamowienie.Data_Odebrania_Zamowienia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zamowienie.Kwota" class="control-label"></label>
+                <input asp-for="Zamowienie.Kwota" class="form-control" />
+                <span asp-validation-for="Zamowienie.Kwota" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zamowienie.Jaki_Samochod" class="control-label"></label>
+                <input asp-for="Zamowienie.Jaki_Samochod" class="form-control" />
+                <span asp-validation-for="Zamowienie.Jaki_Samochod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

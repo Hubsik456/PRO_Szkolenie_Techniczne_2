@@ -1,0 +1,60 @@
+﻿@page
+@model PRO_Szkolenie_Techniczne_2_v2.Pages.Samochody.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Samochod[0].Marka)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Samochod[0].Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Samochod[0].Kolor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Samochod[0].Numer_Rejestracyjny)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Samochod[0].Wlasciciel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Samochod) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kolor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numer_Rejestracyjny)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wlasciciel)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
